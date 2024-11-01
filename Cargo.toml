@@ -8,14 +8,25 @@ name = "nps"
 path = "src/main.rs"
 
 [dependencies]
-colored = "2.1.0"
-dialoguer = "0.11.0"
-indicatif = "0.17.7"
-miette = { version = "5.10.0", features = ["fancy"] }
-ruplacer = "0.8.2"
-serde = { version = "1.0.193", features = ["derive"] }
-thiserror = "1.0.51"
-tokio = { version = "1.35.0", features = ["macros", "rt-multi-thread", "tracing", "process", "io-std", "io-util", "sync", "fs"] }
-toml = "0.8.8"
+tokio = { version = "1.35.0", features = [
+  "macros",
+  "rt-multi-thread",
+  "tracing",
+  "process",
+  "io-std",
+  "io-util",
+  "sync",
+  "fs",
+] }
+
 tracing = "0.1.40"
-tracing-subscriber = "0.3.18"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+
+thiserror = "1.0.51"
+miette = { version = "5.10.0", features = ["fancy"] }
+clap = { version = "4.5.20", features = ["derive"] }
+which = "7.0.0"
+indicatif = { version = "0.17.8", features = ["tokio"] }
+ruplacer = "0.10.0"
+tokio-stream = "0.1.16"
+toml = { version = "0.8.19", features = ["preserve_order"] }
