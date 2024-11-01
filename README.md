@@ -1,23 +1,21 @@
 # Nix Project Setup CLI
 
 ## What
-A CLI that help with setting up projects from flake-based templates (or potentially fully custom (and opinionated) ones that use projects that don't have flake templates)
+An opinionated CLI that helps with setting up projects from flake-based templates 
 
 ## Why
 Got tired doing these things manually
 
 ## Implemented/Planned (the list will most likely be changed a lot in the nearest future):
-- [ ] Rust
-  - [x] nix-cargo-integration
-  - [ ] crane
-  - [ ] naersk
+- [x] Rust
+  - [x] nix-cargo-integration (I use this one for everything, so dont feel the need to add more templates)
 - [ ] Cpp
 - [ ] DotNet
   - [ ] C#
   - [ ] F#
 - [ ] Python
 - [ ] JS/TS
-- [ ] Devenv (Complete Interactive Setup)
+- [ ] Devenv
 
 ### Note
 If you've got ideas of what to add, or want to implement a feature yourself, feel free to create an issue for a discussion, as I don't want people to work on 
