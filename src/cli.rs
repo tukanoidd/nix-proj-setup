@@ -61,13 +61,13 @@ pub enum RustCommand {
     Workspace {
         /// Destination path of the project
         path: PathBuf,
-        /// Name of the bin crate
-        bin_name: String,
-        /// Name of the lib crate (defaults to "{bin_crate}_core")
-        lib_name: Option<String>,
         /// Name of the project (defaults to the directory name from [path])
         #[arg(long)]
         project_name: Option<String>,
+        /// Name of the bin crate (defaults to [project_name])
+        bin_name: Option<String>,
+        /// Name of the lib crate (defaults to "[bin_name]_core")
+        lib_name: Option<String>,
     },
 }
 
@@ -165,6 +165,7 @@ impl RustCommand {
                 const MY_OTHER_WORKSPACE_CRATE: &str = "my-other-workspace-crate";
 
                 let project_name = name_or_dir_name(project_name, &path)?;
+                let bin_name = bin_name.unwrap_or(project_name.clone());
                 let lib_name = lib_name.unwrap_or_else(|| format!("{bin_name}_core"));
 
                 let my_project_replace = "my-project".simple_query_to(&project_name);
