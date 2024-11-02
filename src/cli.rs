@@ -91,7 +91,7 @@ impl RustCommand {
                     "watch_file flake.nix",
                     "watch_file crates.nix",
                     "",
-                    "rust-toolchain.toml",
+                    "watch_file rust-toolchain.toml",
                     "",
                     "use flake .",
                 ]
